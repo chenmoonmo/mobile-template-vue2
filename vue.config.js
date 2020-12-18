@@ -11,6 +11,7 @@ module.exports = {
       .set('store', resolve('./src/store/'))
       .set('components', resolve('./src/components/'))
       .set('assets', resolve('./src/assets/'))
+      .set('api', resolve('./src/network/api'))
   },
   devServer: {
     proxy: {//配置跨域

@@ -1,0 +1,7 @@
+/* 导入字体文件 */
+@font-face {
+  font-family: 'PingFang';
+  src: url('../font/PingFang.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
