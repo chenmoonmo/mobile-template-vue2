@@ -1,7 +1,14 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
+const originalPush = VueRouter.prototype.push
+VueRouter.prototype.push = function push(location) {
+  return originalPush.call(this, location).catch(err => err)
+}
+
 Vue.use(VueRouter)
+
+
 
 const routes = [
   // {
@@ -12,8 +19,10 @@ const routes = [
 ]
 
 const router = new VueRouter({
-  mode: 'history',
-  base: process.env.BASE_URL,
+  mode: 'hash',
+  // base: process.env.BASE_URL,
+  linkActiveClass: '',   // <router-link> 默认的激活的 class
+  linkExactActiveClass: '', // <router-link> 默认的精确激活的 class
   routes
 })
 
