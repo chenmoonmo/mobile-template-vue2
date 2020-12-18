@@ -9,6 +9,7 @@
   "dependencies": {
     "axios": "^0.21.0",
     "core-js": "^3.6.5",
+    "dayjs": "^1.9.7",
     "less": "^3.13.0",
     "less-loader": "^7.1.0",
     "smart-rem": "^2.3.2",
