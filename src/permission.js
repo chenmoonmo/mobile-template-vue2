@@ -1,12 +1,8 @@
+// 权限控制
 import router from './router'
 // import store from './store'
-// import {Message} from 'element-ui'
-// import NProgress from 'nprogress'
-// import 'nprogress/nprogress.css'
-// import {getToken} from '@/utils/auth'
 import TokenUtils from "@/commonjs/token-utils"
 
-// NProgress.configure({showSpinner: false})
 
 const whiteList = ['/login', '/404']
 
@@ -16,7 +12,6 @@ router.beforeEach((to, from, next) => {
     /* has token*/
     if (to.path === '/login') {
       next({ path: '/' })
-      // NProgress.done()
     } else {
       next()
     }
@@ -27,7 +22,6 @@ router.beforeEach((to, from, next) => {
       next()
     } else {
       next(`/login`) // 否则全部重定向到登录页
-      // NProgress.done()
     }
   }
 })

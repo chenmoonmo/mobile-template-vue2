@@ -16,7 +16,7 @@ module.exports = {
   devServer: {
     proxy: {//配置跨域
       '/api': {
-        target: 'http://120.26.60.64/poseidon',//这里后台的地址模拟的;应该填写你们真实的后台接口
+        target: '',//这里后台的地址模拟的;应该填写你们真实的后台接口
         ws: true,
         changOrigin: true,//允许跨域
         pathRewrite: {

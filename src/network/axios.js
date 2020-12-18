@@ -9,13 +9,14 @@ import store from '../store/index'
 import { clearAllCookie } from '@/utils/commonjs'
 
 
+// process.env.NODE_ENV 在执行npm命令时自动改变
 
 if (process.env.NODE_ENV == 'development') {//测试
   axios.defaults.baseURL = '/api';//本地跨域需配置代理
 } else if (process.env.NODE_ENV == 'debug') {
   axios.defaults.baseURL = '';
 } else if (process.env.NODE_ENV == 'production') {//生产
-  axios.defaults.baseURL = 'http://120.26.60.64/poseidon';
+  axios.defaults.baseURL = '';
 }
 
 export const baseURL = axios.defaults.baseURL
