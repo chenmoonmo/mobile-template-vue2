@@ -1,4 +1,5 @@
 const path = require('path')
+
 function resolve(dir) {
   return path.join(__dirname, dir)
 }
@@ -7,11 +8,12 @@ module.exports = {
   chainWebpack: (config) => {
     config.resolve.alias
       .set('@', resolve('./src/'))
-      .set('views', resolve('./src/views/'))
+      .set('assets', resolve('./src/assets/'))
+      .set('utils', resolve('./src/utils'))
       .set('store', resolve('./src/store/'))
       .set('components', resolve('./src/components/'))
-      .set('assets', resolve('./src/assets/'))
-      .set('api', resolve('./src/network/api'))
+      .set('views', resolve('./src/views/'))
+      .set('api', resolve('./src/network/'))
   },
   devServer: {
     proxy: {//配置跨域

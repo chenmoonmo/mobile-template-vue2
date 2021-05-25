@@ -3,10 +3,12 @@ import router from './router'
 // import store from './store'
 import TokenUtils from "@/commonjs/token-utils"
 
+console.log(router)
+
 
 const whiteList = ['/login', '/404']
 
-router.beforeEach((to, from, next) => {
+router.router.beforeEach((to, from, next) => {
   // NProgress.start()
   if (TokenUtils.getToken()) {
     /* has token*/
@@ -26,6 +28,6 @@ router.beforeEach((to, from, next) => {
   }
 })
 
-router.afterEach(() => {
+router.router.afterEach(() => {
   // NProgress.done()
 })
